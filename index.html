@@ -470,10 +470,13 @@
                 position: sticky;
                 top: 0;
                 z-index: 100;
-                background-color: rgba(245, 245, 245, 0.95);
+                background-color: rgba(245, 245, 245, 0.98);
                 box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
                 border-bottom-left-radius: 15px;
                 border-bottom-right-radius: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             
             /* Better Typography */
@@ -501,9 +504,13 @@
             
             /* Improved Logo */
             .logo {
-                font-size: 20px;
-                max-width: 60%;
+                font-size: 18px;
+                max-width: 55%;
                 transition: transform 0.3s ease;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             
             .logo a:active {
@@ -614,33 +621,60 @@
             
             /* Better Hamburger */
             .hamburger {
-                width: 20px;
-                transition: transform 0.3s ease;
+                width: 40px;
+                height: 40px;
+                transition: all 0.3s ease;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.6);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             }
             
             .hamburger:active {
-                transform: scale(0.9);
+                transform: scale(0.95);
+                background-color: rgba(255, 255, 255, 0.8);
             }
             
             .hamburger-line {
                 height: 2px;
+                width: 18px;
                 margin: 3px 0;
                 border-radius: 2px;
+                background-color: var(--dark);
             }
             
             .menu-right {
-                gap: 0.75rem;
+                gap: 1rem;
                 font-size: 11px;
+                display: flex;
+                align-items: center;
             }
             
             .menu-item {
                 opacity: 0.85;
-                transition: opacity 0.3s ease;
-                padding: 5px;
+                transition: all 0.3s ease;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.6);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            }
+            
+            .menu-item i {
+                font-size: 18px;
+                color: var(--dark);
             }
             
             .menu-item:active {
                 opacity: 1;
+                transform: scale(0.95);
+                background-color: rgba(255, 255, 255, 0.8);
             }
             
             /* Better Splash Screen */
@@ -744,7 +778,7 @@
     <div class="video-background">
         <div class="image-slideshow" id="slideshow">
             <!-- Images will be loaded via JavaScript -->
-        <img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image active"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"></div>
+        <img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image active"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"></div>
     </div>
     
     <!-- Audio Player (Hidden) -->
@@ -773,8 +807,8 @@
             <div class="logo"><a href="https://purposelycreated.me" style="text-decoration: none; color: var(--dark);">PurposelyCreated.me</a></div>
             
             <div class="menu-right">
-                <div class="menu-item"><i class="fas fa-user-circle"></i> Login</div>
-                <div class="menu-item"><i class="fas fa-question-circle"></i> Help</div>
+                <div class="menu-item"><i class="fas fa-user-circle"></i></div>
+                <div class="menu-item"><i class="fas fa-question-circle"></i></div>
             </div>
         </header>
         
