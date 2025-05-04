@@ -10,6 +10,12 @@
             --light-accent: #DFD3C3;
         }
         
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(166, 122, 91, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(166, 122, 91, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(166, 122, 91, 0); }
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -390,6 +396,10 @@
                 bottom: 20px;
                 right: 20px;
             }
+            
+            .website-url {
+                font-size: 15px !important;
+            }
         }
         
         @media (max-width: 480px) {
@@ -400,6 +410,22 @@
             .footer-links {
                 display: none;
             }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .website-url {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .audio-controls {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
@@ -407,8 +433,9 @@
 <script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script><script id="simplify-jobs-page-script" src="chrome-extension://pbanhockgagggenencehbnadejlgchfc/js/pageScript.bundle.js"></script></head>
 <body>
     <!-- Splash Screen for Audio Initialization -->
-    <div class="splash-screen" id="splash" style="opacity: 0; display: none;">
+    <div class="splash-screen" id="splash">
         <div class="splash-logo">PurposelyCreated.me</div>
+        <p style="font-family: 'Inter', sans-serif; margin-bottom: 15px; color: var(--dark); text-align: center;">Click below to enable music and enter site</p>
         <button class="enter-button" id="enter-site">ENTER SITE</button>
     </div>
     
@@ -416,7 +443,7 @@
     <div class="video-background">
         <div class="image-slideshow" id="slideshow">
             <!-- Images will be loaded via JavaScript -->
-        <img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image active"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"></div>
+        <img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image active"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"></div>
     </div>
     
     <!-- Audio Player (Hidden) -->
@@ -457,7 +484,7 @@
                 <h1 class="main-title">Purpose</h1>
                 <p class="description">A platform designed to empower musicians and artists through purpose-driven fashion, where creative expression meets meaningful design.</p>
                 
-                <p class="description" style="font-weight: 500; margin-top: -20px; animation-delay: 0.55s;">Visit <a href="https://purposelycreated.me" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">purposelycreated.me</a> when we launch!</p>
+                <p class="description website-url" style="font-weight: 500; margin-top: -20px; animation-delay: 0.55s; font-size: 16px;">Visit <a href="https://purposelycreated.me" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">purposelycreated.me</a> when we launch!</p>
                 
                 <div class="form-container">
                     <form class="email-form">
@@ -531,13 +558,33 @@
         const audioLabel = document.getElementById('audio-label');
         
         enterButton.addEventListener('click', function() {
-            // Start audio
+            // Start audio with better mobile support
             if (audioElement) {
-                audioElement.play();
-                audioElement.muted = false;
-                isMuted = false;
-                audioIcon.className = 'fas fa-volume-up';
-                audioLabel.textContent = 'Sound On';
+                // Try to play with user gesture
+                let playPromise = audioElement.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        // Autoplay started successfully
+                        audioElement.muted = false;
+                        isMuted = false;
+                        audioIcon.className = 'fas fa-volume-up';
+                        audioLabel.textContent = 'Sound On';
+                    })
+                    .catch(error => {
+                        // Auto-play was prevented
+                        console.log("Audio playback was prevented by browser: ", error);
+                        // Set to muted state
+                        audioElement.muted = true;
+                        isMuted = true;
+                        audioIcon.className = 'fas fa-volume-mute';
+                        audioLabel.textContent = 'Sound Off (Click to enable)';
+                        
+                        // Make audio controls more visible to alert user
+                        const audioControls = document.querySelector('.audio-controls');
+                        audioControls.style.animation = 'pulse 2s infinite';
+                    });
+                }
             }
             
             // Hide splash screen
