@@ -477,10 +477,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <meta name="theme-color" content="#F5F5F5">
-<script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script><script id="simplify-jobs-page-script" src="chrome-extension://pbanhockgagggenencehbnadejlgchfc/js/pageScript.bundle.js"></script></head>
+<script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script><script id="simplify-jobs-page-script" src="chrome-extension://pbanhockgagggenencehbnadejlgchfc/js/pageScript.bundle.js"></script><script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script></head>
 <body>
     <!-- Splash Screen for Audio Initialization -->
-    <div class="splash-screen" id="splash">
+    <div class="splash-screen" id="splash" style="opacity: 0; display: none;">
         <div class="splash-logo">PurposelyCreated.me</div>
         <button class="enter-button" id="enter-site">ENTER SITE</button>
     </div>
@@ -489,7 +489,7 @@
     <div class="video-background">
         <div class="image-slideshow" id="slideshow">
             <!-- Images will be loaded via JavaScript -->
-        <img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image active"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"></div>
+        <img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image active"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"></div>
     </div>
     
     <!-- Audio Player (Hidden) -->
@@ -510,9 +510,7 @@
         <!-- Header -->
         <header class="header">
             <div class="hamburger">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
+           
             </div>
             
             <div class="logo"><a href="https://purposelycreated.me" style="text-decoration: none; color: var(--dark);">PurposelyCreated.me</a></div>
@@ -532,8 +530,25 @@
                 <p class="description website-url" style="font-weight: 500; margin-top: -20px; animation-delay: 0.55s; font-size: 16px;">Visit <a href="https://purposelycreated.me" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">purposelycreated.me</a> when we launch!</p>
                 
                 <div class="form-container">
-                    <form class="email-form">
-                        <input type="email" class="email-input" placeholder="Enter your email address" required="">
+                    <form class="email-form" action="https://formsubmit.co/rlgoodman7@gmail.com" method="POST">
+                        <input type="email" name="email" class="email-input" placeholder="Enter your email address" required="">
+                        <input type="hidden" name="_subject" value="New Waitlist Signup - PurposelyCreated.me">
+                        <input type="hidden" name="_next" value="https://purposelycreated.me">
+                        <input type="hidden" name="_template" value="box">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="message" value="Hello Mr. Goodman,
+
+Congratulations! Someone new has subscribed to the PurposelyCreated.me waitlist.
+
+Customer details:
+- Email: {email}
+
+This person is interested in your platform designed to empower musicians and artists through purpose-driven fashion.
+
+You can reach out to them when the website is officially launched.
+
+Best regards,
+The PurposelyCreated.me Notification System">
                         <button type="submit" class="submit-btn">Join The Waitlist</button>
                     </form>
                 </div>
@@ -656,22 +671,23 @@
             }
         });
         
-        // Form submission animation
+        // Form submission handling
         const form = document.querySelector('.email-form');
         const submitBtn = document.querySelector('.submit-btn');
         
+        // We will use FormSubmit's default handling
+        // The form action is now set directly on the HTML form element
+        // This listener is just for client-side validation and UI updates
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
             const input = this.querySelector('.email-input');
+            const userEmail = input.value;
             
-            if (input.value && input.value.includes('@')) {
-                const originalText = submitBtn.innerText;
-                submitBtn.innerText = 'Thank You';
-                
-                setTimeout(() => {
-                    submitBtn.innerText = originalText;
-                    input.value = '';
-                }, 3000);
+            if (userEmail && userEmail.includes('@')) {
+                // Let the form submit normally
+                submitBtn.innerText = 'Processing...';
+                // Form will be submitted to FormSubmit service
+            } else {
+                e.preventDefault();
             }
         });
     </script>
