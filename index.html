@@ -477,10 +477,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <meta name="theme-color" content="#F5F5F5">
-<script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script><script id="simplify-jobs-page-script" src="chrome-extension://pbanhockgagggenencehbnadejlgchfc/js/pageScript.bundle.js"></script><script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script></head>
+<script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script><script id="simplify-jobs-page-script" src="chrome-extension://pbanhockgagggenencehbnadejlgchfc/js/pageScript.bundle.js"></script><script src="https://lib.yourware.so/yourware-lib.umd.js" id="yourware-lib"></script><script src="https://lib.youware.com/youware-lib.1747145198.js" id="yourware-lib"></script></head>
 <body>
     <!-- Splash Screen for Audio Initialization -->
-    <div class="splash-screen">
+    <div class="splash-screen" id="splash" style="opacity: 0; display: none;">
         <div class="splash-logo">PurposelyCreated.me</div>
         <button class="enter-button" id="enter-site">ENTER SITE</button>
     </div>
@@ -489,7 +489,7 @@
     <div class="video-background">
         <div class="image-slideshow" id="slideshow">
             <!-- Images will be loaded via JavaScript -->
-        <img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image active"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"></div>
+        <img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/07/10/22/16/ray-charles-7313839_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2018/03/06/06/58/performance-3202707_1280.jpg" class="slideshow-image active"><img src="https://cdn.pixabay.com/photo/2019/11/15/13/22/lady-4628418_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2012/10/26/03/36/jazz-63212_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2021/12/08/12/42/street-musicians-6855638_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2019/12/15/08/14/body-painting-4696539_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_1280.jpg" class="slideshow-image"><img src="https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg" class="slideshow-image"></div>
     </div>
     
     <!-- Audio Player (Hidden) -->
@@ -582,54 +582,121 @@ The PurposelyCreated.me Notification System">
             "https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732251_1280.jpg"
         ];
         
+        // Initialize variables outside event listeners to ensure access across functions
+        let splashScreen, enterButton, audioButton, audioIcon, audioLabel;
+        
         // Initialize audio and slideshow when page loads
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize splash screen elements
+            splashScreen = document.getElementById('splash');
+            if (!splashScreen) {
+                console.error('Splash screen element not found');
+            }
+            
+            enterButton = document.getElementById('enter-site');
+            audioButton = document.getElementById('toggle-audio');
+            audioIcon = document.getElementById('audio-icon');
+            audioLabel = document.getElementById('audio-label');
+            
             // Initialize audio
             audioElement = document.getElementById('background-audio');
-            audioElement.volume = 0.7;
+            if (audioElement) {
+                audioElement.volume = 0.7;
+                // Preload audio to improve playback success
+                audioElement.load();
+            } else {
+                console.error('Audio element not found');
+            }
             
-            // Initialize slideshow
+            // Initialize slideshow only if empty
             const slideshow = document.getElementById('slideshow');
+            if (slideshow) {
+                // Check if slideshow has no images or needs refresh
+                const existingImages = slideshow.querySelectorAll('.slideshow-image');
+                if (existingImages.length <= 0) {
+                    // Create image elements
+                    slideImages.forEach((src, index) => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.className = 'slideshow-image';
+                        if (index === 0) img.classList.add('active'); // Make first image active
+                        slideshow.appendChild(img);
+                    });
+                }
+                
+                // Start slideshow
+                let currentSlide = 0;
+                setInterval(() => {
+                    const images = document.querySelectorAll('.slideshow-image');
+                    if (images.length > 0) {
+                        images[currentSlide].classList.remove('active');
+                        currentSlide = (currentSlide + 1) % images.length;
+                        images[currentSlide].classList.add('active');
+                    }
+                }, 5000);
+            } else {
+                console.error('Slideshow element not found');
+            }
             
-            // Create image elements
-            slideImages.forEach((src, index) => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.className = 'slideshow-image';
-                if (index === 0) img.classList.add('active'); // Make first image active
-                slideshow.appendChild(img);
-            });
+            // Add event listeners
+            if (enterButton) {
+                enterButton.addEventListener('click', handleEnterSite);
+            }
             
-            // Start slideshow
-            let currentSlide = 0;
-            setInterval(() => {
-                const images = document.querySelectorAll('.slideshow-image');
-                images[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % images.length;
-                images[currentSlide].classList.add('active');
-            }, 5000);
+            if (audioButton) {
+                audioButton.addEventListener('click', toggleAudio);
+            }
+            
+            // Form submission handling
+            const form = document.querySelector('.email-form');
+            const submitBtn = document.querySelector('.submit-btn');
+            
+            if (form && submitBtn) {
+                // We will use FormSubmit's default handling
+                // This listener is just for client-side validation and UI updates
+                form.addEventListener('submit', function(e) {
+                    const input = this.querySelector('.email-input');
+                    if (input) {
+                        const userEmail = input.value;
+                        
+                        if (userEmail && userEmail.includes('@')) {
+                            // Let the form submit normally
+                            submitBtn.innerText = 'Processing...';
+                            // Form will be submitted to FormSubmit service
+                        } else {
+                            e.preventDefault();
+                        }
+                    }
+                });
+            }
         });
 
-        // Initialize and handle splash screen
-        const splashScreen = document.getElementById('splash');
-        const enterButton = document.getElementById('enter-site');
-        const audioButton = document.getElementById('toggle-audio');
-        const audioIcon = document.getElementById('audio-icon');
-        const audioLabel = document.getElementById('audio-label');
-        
-        enterButton.addEventListener('click', function() {
-            // Start audio with better mobile support
+        // Handle enter site button click
+        function handleEnterSite() {
+            // Double check splash screen and audio elements
+            if (!splashScreen) splashScreen = document.getElementById('splash');
+            if (!audioElement) audioElement = document.getElementById('background-audio');
+            if (!audioIcon) audioIcon = document.getElementById('audio-icon');
+            if (!audioLabel) audioLabel = document.getElementById('audio-label');
+            
+            // Start audio with better cross-browser support
             if (audioElement) {
                 // Try to play with user gesture
-                let playPromise = audioElement.play();
+                let playPromise;
+                try {
+                    playPromise = audioElement.play();
+                } catch (err) {
+                    console.log("Audio play error:", err);
+                    playPromise = undefined;
+                }
                 
                 if (playPromise !== undefined) {
                     playPromise.then(_ => {
                         // Autoplay started successfully
                         audioElement.muted = false;
                         isMuted = false;
-                        audioIcon.className = 'fas fa-volume-up';
-                        audioLabel.textContent = 'Sound On';
+                        if (audioIcon) audioIcon.className = 'fas fa-volume-up';
+                        if (audioLabel) audioLabel.textContent = 'Sound On';
                     })
                     .catch(error => {
                         // Auto-play was prevented
@@ -637,59 +704,62 @@ The PurposelyCreated.me Notification System">
                         // Set to muted state
                         audioElement.muted = true;
                         isMuted = true;
-                        audioIcon.className = 'fas fa-volume-mute';
-                        audioLabel.textContent = 'Sound Off (Click to enable)';
+                        if (audioIcon) audioIcon.className = 'fas fa-volume-mute';
+                        if (audioLabel) audioLabel.textContent = 'Sound Off (Click to enable)';
                         
-                        // Make audio controls more visible to alert user
+                        // Make audio controls more visible
                         const audioControls = document.querySelector('.audio-controls');
-                        audioControls.style.animation = 'pulse 2s infinite';
+                        if (audioControls) {
+                            audioControls.style.animation = 'pulse 2s infinite';
+                        }
                     });
                 }
             }
             
-            // Hide splash screen
-            splashScreen.style.opacity = '0';
-            setTimeout(() => {
-                splashScreen.style.display = 'none';
-            }, 500);
-        });
+            // Hide splash screen with a fallback approach
+            if (splashScreen) {
+                splashScreen.style.opacity = '0';
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                }, 500);
+            } else {
+                // If there's an issue with the splash screen element, force hide all elements with splash-screen class
+                const splashElements = document.querySelectorAll('.splash-screen');
+                splashElements.forEach(el => {
+                    el.style.opacity = '0';
+                    setTimeout(() => {
+                        el.style.display = 'none';
+                    }, 500);
+                });
+            }
+        }
         
         // Toggle audio button
-        audioButton.addEventListener('click', function() {
+        function toggleAudio() {
+            if (!audioElement) audioElement = document.getElementById('background-audio');
+            if (!audioIcon) audioIcon = document.getElementById('audio-icon');
+            if (!audioLabel) audioLabel = document.getElementById('audio-label');
+            
             if (!audioElement) return;
 
             if (isMuted) {
                 audioElement.muted = false;
-                audioIcon.className = 'fas fa-volume-up';
-                audioLabel.textContent = 'Sound On';
+                if (audioIcon) audioIcon.className = 'fas fa-volume-up';
+                if (audioLabel) audioLabel.textContent = 'Sound On';
                 isMuted = false;
+                try {
+                    audioElement.play();
+                } catch (error) {
+                    console.log("Error playing audio:", error);
+                }
             } else {
                 audioElement.muted = true;
-                audioIcon.className = 'fas fa-volume-mute';
-                audioLabel.textContent = 'Sound Off';
+                if (audioIcon) audioIcon.className = 'fas fa-volume-mute';
+                if (audioLabel) audioLabel.textContent = 'Sound Off';
                 isMuted = true;
             }
-        });
-        
-        // Form submission handling
-        const form = document.querySelector('.email-form');
-        const submitBtn = document.querySelector('.submit-btn');
-        
-        // We will use FormSubmit's default handling
-        // The form action is now set directly on the HTML form element
-        // This listener is just for client-side validation and UI updates
-        form.addEventListener('submit', function(e) {
-            const input = this.querySelector('.email-input');
-            const userEmail = input.value;
-            
-            if (userEmail && userEmail.includes('@')) {
-                // Let the form submit normally
-                submitBtn.innerText = 'Processing...';
-                // Form will be submitted to FormSubmit service
-            } else {
-                e.preventDefault();
-            }
-        });
+        }
     </script>
+
 
 </body></html>
